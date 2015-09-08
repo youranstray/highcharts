@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>统计分析</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootswatch.min.css">
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/highcharts.js"></script>
+	<script type="text/javascript" src="js/highcharts-more.js"></script>
+	<script type="text/javascript" src="js/exporting.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+ 
+	    $(function () {
+	 
+	        var data1 = [{ name: 'olive', value: 116 }, { name: 'momo', value: 115 }, { name: 'only', value: 222 }, { name: 'for', value: 324}, { name: 'katie', value: 190 }, {name:'word', value: 100}, {name:'serious', value: 250}];
+	 
+	        var opt1 = HighChart.ChartOptionTemplates.Pie(data1,'Love-Rate',"饼图示例");
+	        console.log(opt1.chart);
+	        console.log(opt1.plotOptions);
+	        console.log(opt1.series);
+	        console.log(opt1.title);
+	        console.log(opt1.tooltip);
+	        //var opt11 = HighChart.ChartOptionTemplates.DrillDownPie(data1, 'Love-Rate', "饼图示例1");
+	 
+	        var pie = $("#pie");
+	        //var pie1 = $("#pie1");
+	 
+	        HighChart.RenderChart(opt1, pie);
+	        //HighChart.RenderChart(opt11, pie1);
+
+	        var data2 = [
+ 
+            { name: '2013-01', group: 'olive', value: 116 },
+ 
+            { name: '2013-01', group: 'momo', value: 115 },
+ 
+            { name: '2013-01', group: 'only', value: 222 },
+ 
+            { name: '2013-01', group: 'for', value: 324 },
+ 
+            { name: '2013-02', group: 'olive', value: 156 },
+ 
+            { name: '2013-02', group: 'momo', value: 185 },
+ 
+            { name: '2013-02', group: 'only', value: 202 },
+ 
+            { name: '2013-02', group: 'for', value: 34 },
+ 
+            { name: '2013-03', group: 'olive', value: 16 },
+ 
+            { name: '2013-03', group: 'momo', value: 51 },
+ 
+            { name: '2013-03', group: 'only', value: 22 },
+ 
+            { name: '2013-03', group: 'for', value: 84 }
+ 
+            ];
+ 
+            var opt2 = HighChart.ChartOptionTemplates.Line(data2, 'Love-Rate', "折线图示例");
+ 
+            var line = $("#line");
+ 
+            HighChart.RenderChart(opt2, line);
+
+            var data3 = [
+	            { name: '2013-01', group: 'olive', value: 116 },
+	            { name: '2013-01', group: 'momo', value: 115 },
+	            { name: '2013-01', group: 'only', value: 222 },
+	            { name: '2013-01', group: 'for', value: 324 },
+	            { name: '2013-02', group: 'olive', value: 156 },
+	            { name: '2013-02', group: 'momo', value: 185 },
+	            { name: '2013-02', group: 'only', value: 202 },
+	            { name: '2013-02', group: 'for', value: 34 },
+	            { name: '2013-03', group: 'olive', value: 16 },
+	            { name: '2013-03', group: 'momo', value: 51 },
+	            { name: '2013-03', group: 'only', value: 22 },
+	            { name: '2013-03', group: 'for', value: 84 }
+            ];
+            var opt3 = HighChart.ChartOptionTemplates.Bars(data3, '','','Love-Rate', "分组柱形图示例");
+            var bar1 = $("#bar1");
+            HighChart.RenderChart(opt3, bar1);
+
+            var opt4 = HighChart.ChartOptionTemplates.Bars(data3, true,'','Love-Rate', "堆积柱形图示例");
+            var bar2 = $("#bar2");
+            HighChart.RenderChart(opt4, bar2);
+
+            var opt5 = HighChart.ChartOptionTemplates.Bars(data3, '',true ,'Love-Rate', "堆积百分比柱形图示例");
+            var bar3 = $("#bar3");
+            HighChart.RenderChart(opt5, bar3);
+	 
+	    });
+ 
+    </script>
+</head>
+<body>
+	<div id="pie"></div>
+	<br>
+	<!-- <div id="pie1"></div>
+	<br> -->
+	<div id="line"></div>
+	<br>
+	<div id="bar1"></div>
+	<br>
+	<div id="bar2"></div>
+	<br>
+	<div id="bar3"></div>
+	
+</body>
+</html>
